@@ -4,7 +4,7 @@ tipo_esperado =""
 
 def inserir_TS(token):
     global tabela_TS
-    insert_ts = {token.value: {"Token": token.type, "Index": token.index}}
+    insert_ts = {token.value: {"Token": token.type}}
     busca_ts = get_ts(token)
     if busca_ts == None:
         tabela_TS.update(insert_ts)
@@ -26,7 +26,11 @@ def check(tokens):
 def Z(tokens):
     I(tokens)
     S(tokens)
-    print('Tabela de tokens:\n', tabela_TS)
+    print('\nTabela de Simbolos:')
+    for x in tabela_TS:
+        print ('Nome:',x)
+        for y in tabela_TS[x]:
+            print (y,':',tabela_TS[x][y])
 
 def erro(token, esperado):
     print("Erro de sintaxe: Linha {} | Esperado: {} | Entrada: {}"

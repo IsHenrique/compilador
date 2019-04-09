@@ -1,4 +1,4 @@
-from SintaticoTabela import Z
+from SintaticoTabela import *
 
 palavraReservada = ('var', 'integer', 'real', 'if', 'then')
 terminais = (' ', '\t', '\n', ',', ':', ':=', '+', ',', ';', '=')
@@ -72,10 +72,11 @@ if __name__ == '__main__':
         tokens = []
         for i, l in enumerate(arq):
             tokens.append(tokenizer(l, i))
-        print(tokens)
+        for x in range(len(tokens)):
+            print (tokens[x])
         juntalinha = []
         for linha in tokens:
             juntalinha += linha
             #print('TESTE', juntalinha)
         Z(juntalinha)
-        print('Cadeia aceita')
+        print(' \n Cadeia aceita')
