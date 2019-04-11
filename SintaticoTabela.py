@@ -4,7 +4,7 @@ tipo_esperado =""
 
 def inserir_TS(token):
     global tabela_TS
-    insert_ts = {token.value: {"Token": token.type}}
+    insert_ts = {token.value: {"Index": token.index}}
     busca_ts = get_ts(token)
     if busca_ts == None:
         tabela_TS.update(insert_ts)
